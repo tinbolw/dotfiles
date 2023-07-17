@@ -9,3 +9,6 @@ cp ~/.config/rofi/config.rasi ./dotfiles/rofi/config.rasi
 cp ~/.config/rofi/theme.rasi ./dotfiles/rofi/theme.rasi
 
 cp ~/.config/alacritty/alacritty.yml ./dotfiles/alacritty/alacritty.yml
+
+git commit -am "update"
+git push
