@@ -2,6 +2,8 @@ prereqs installation script (can probably get from github with curl or wget)
 
 rofi-power-menu
 
+#
+
 pacman -Qqen > pkglist.txt
 
 pacman -S - < pkglist.txt
@@ -20,6 +22,8 @@ itself
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
+# Networking
 
+#
 
 dotfiles in ~/dotfiles
