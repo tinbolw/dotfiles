@@ -1,0 +1,5 @@
+# Fonts
+noto-fonts
+noto-fonts-cjk (Chinese Japanese Korean characters)
+noto-fonts-emoji
+noto-fonts-extra
