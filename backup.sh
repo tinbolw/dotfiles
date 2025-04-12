@@ -1,7 +1,3 @@
-echo "Backing up ./dotfiles..."
-
-cp -vr ./dotfiles ./dotfiles-backup
-
 echo "Starting backup..."
 
 # cp -v ~/.zshrc ./dotfiles/zsh/.zshrc
@@ -9,11 +5,42 @@ echo "Starting backup..."
 # cp -v ~/.config/polybar/launch.sh ./dotfiles/polybar/launch.sh
 # cp -vr ~/.config/alacritty/alacritty.yml ./dotfiles/alacritty/alacritty.yml
 
-cp -vr ~/.config/i3/config ./dotfiles/i3/config
-cp -vr ~/.config/i3status/config ./dotfiles/i3status/config
-cp -vr ~/.config/picom/picom.conf ./dotfiles/picom/picom.conf
+# Common
 
-cp -vr ~/.config/ghostty/config ./dotfiles/ghostty/config
+echo "Copying common into common-backup..."
 
-cp -vr ~/.config/rofi/config.rasi ./dotfiles/rofi/config.rasi
-cp -vr ~/.config/rofi/theme.rasi ./dotfiles/rofi/theme.rasi
+cp -Tvr ./common ./backups/common-backup
+
+echo "Backing up common..."
+
+cp -vr ~/.config/flameshot/flameshot.ini ./common/flameshot/
+cp -vr ~/.config/ghostty/config ./common/ghostty/
+
+# Version 1
+
+echo "Copying version1 into version1-backup..."
+
+cp -Tvr ./version1 ./backups/version1-backup
+
+echo "Backing up version1..."
+
+cp -vr ~/.config/hypr/hyprland.conf ./version1/hypr/
+cp -vr ~/.config/hypr/hyprpaper.conf ./version1/hypr/
+
+cp -vr ~/.config/rofi/config.rasi ./version1/rofi/
+cp -vr ~/.config/rofi/theme.rasi ./version1/rofi/
+
+cp -vr ~/.config/waybar/config.jsonc ./version1/waybar/
+cp -vr ~/.config/waybar/style.css ./version1/waybar/
+
+# Version 2
+
+# echo "Copying version2 into version2-backup..."
+
+# cp -Tvr ./version2 ./backups/version2-backup
+
+# echo "Backing up version2..."
+
+# cp -vr ~/.config/i3/config ./version2/i3/
+# cp -vr ~/.config/i3status/config ./version2/i3status/
+# cp -vr ~/.config/picom/picom.conf ./version2/picom/
