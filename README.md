@@ -21,3 +21,6 @@ Entries that are not listed in version 2 are the same as version 1.
 | -------- | ------- | - |
 | Desktop Environment | i3     | |
 |  | [more](./version2.md)     | |
+
+## Gallery
+![Screenshot](/gallery/2025-04-13_09-52.png)
