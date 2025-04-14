@@ -36,7 +36,7 @@
 }
 window {
     border-radius: 10;
-    background-color: rgba ( 48, 52, 70, 80 % );
+    background-color: rgba ( 40, 44, 52, 80 % );
     border:           2;
     padding:          5;
 }
