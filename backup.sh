@@ -26,6 +26,7 @@ echo "Backing up version1..."
 
 cp -vr ~/.config/hypr/hyprland.conf ./version1/hypr/
 cp -vr ~/.config/hypr/hyprpaper.conf ./version1/hypr/
+cp -vr ~/.config/hypr/hyprlock.conf ./version1/hypr/
 
 cp -vr ~/.config/rofi/config.rasi ./version1/rofi/
 cp -vr ~/.config/rofi/theme.rasi ./version1/rofi/
