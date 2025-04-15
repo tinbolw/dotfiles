@@ -1,6 +1,5 @@
 # Arch-Dotfiles
-My Arch Linux dotfiles-
-a heavy work in progress
+My Arch Linux dotfiles- more coming soon
 
 I am currently using Version 1.
 
