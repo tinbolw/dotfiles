@@ -1,10 +1,12 @@
 # dotfiles
 Distro: Arch Linux
 
+Currently working on a quickshell configuration.
+
 ## Hosts:
 | Hostname | Host | Specs |
 | - | - | - |
-| theearth | ThinkPad T480 | Link |
+| theearth | ThinkPad T480 | [Link](./md/theearth.md) |
 | jitpc | OptiPlex 7040 | Link |
 
 ## 's
