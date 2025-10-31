@@ -6,8 +6,8 @@ Currently working on a quickshell configuration.
 ## Hosts:
 | Hostname | Host | Specs |
 | - | - | - |
-| theearth | ThinkPad T480 | [Link](./md/theearth.md) |
-| jitpc | OptiPlex 7040 | Link |
+| theearth | ThinkPad T480 | [Link](/md/theearth.md) |
+| jitpc | OptiPlex 7040 | [Link](/md/jitpc.md) |
 
 ## 's
 |  |  |
@@ -16,7 +16,10 @@ Currently working on a quickshell configuration.
 | Desktop Environment | hyprland |
 | Terminal Emulator | ghostty |
 | Bootloader | GRUB |
-|  | [more](./version1.md) |
+|  | [more](/md/etc.md) |
 
 ## Gallery
+## Desktop
 ![theearth](/gallery/theearth.png)
+## Wallpaper
+![wallpaper](/gallery/wallpaper.png)

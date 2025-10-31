@@ -1,4 +1,4 @@
-# theearth
+# theearth (ThinkPad T480)
 ## Specs
 | Component |  |
 | - | - |
