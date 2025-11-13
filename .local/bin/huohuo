@@ -1,0 +1,1 @@
+hyprctl dispatch exec "[float; size 500 500]" "mpv --loop-file=inf --background=none --no-osc /home/tinbolw/Pictures/huohuo.gif"

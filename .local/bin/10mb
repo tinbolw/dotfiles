@@ -1,0 +1,12 @@
+# Options
+encoder=h264_qsv
+
+# https://stackoverflow.com/a/22243834
+videoDuration=$(ffprobe -i $1 -show_entries format=duration -v quiet -of csv="p=0")
+# Rounds video duration up, and target bitrate down
+# https://stackoverflow.com/a/29696267
+targetBitrate=$((80000 / $((1 + ${videoDuration%.*}))))
+
+# https://stackoverflow.com/a/29082672
+ffmpeg -y -i $1 -c:v $encoder -preset medium -b:v "$targetBitrate"k -pass 1 -b:a 128k -f mp4 /dev/null && \
+ffmpeg -i $1 -c:v $encoder -preset medium -b:v "$targetBitrate"k -pass 2 -b:a 128k $2

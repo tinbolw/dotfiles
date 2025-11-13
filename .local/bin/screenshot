@@ -1,0 +1,20 @@
+activewindow=$(hyprctl activewindow)
+fullscreenstatus=$(grep -oP '(?<=fullscreen: ).*' <<< $activewindow)
+
+if [ $fullscreenstatus -ne 0 ]; then
+	windowaddress=$(grep -oP '(?<=Window )(.*)(?= ->)' <<< $activewindow)
+	QT_FONT_DPI=75 flameshot gui & sleep 2
+	until [ "$(hyprctl clients | grep 'flameshot' &> /dev/null; echo $?)" -eq 1 ]
+	do
+		sleep 0.5
+		echo "waiting..."
+	done
+	cursorPos=$(hyprctl cursorpos)
+	cursorX=$(grep -oP '^.*(?=(,))' <<< $cursorPos)
+	cursorY=$(grep -oP '(?<=, ).*' <<< $cursorPos)
+	hyprctl dispatch focuswindow address:0x$windowaddress
+	hyprctl dispatch fullscreen $fullscreenstatus
+	hyprctl dispatch movecursor $cursorX $cursorY
+else
+	QT_FONT_DPI=75 flameshot gui
+fi
