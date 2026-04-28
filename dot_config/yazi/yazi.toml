@@ -1,0 +1,29 @@
+[opener]
+kew = [
+	{ run = "bash -c \"(foot kew play %s)\"", orphan = false, for = "unix", desc = "kew" },
+]
+mpv = [
+	{ run = "mpv %s", orphan = false, for = "unix", desc = "mpv"}
+]
+feh = [
+	{ run = "feh %s", orphan = false, for = "unix", desc = "feh"}
+]
+qimgv = [
+	{ run = "qimgv %s", orphan = false, for = "unix", desc = "qimgv"}
+]
+zathura = [
+	{ run = "zathura %s", orphan = false, for = "unix", desc="zathura"}
+]
+okular = [
+	{ run = "okular %s", orphan = false, for = "unix", desc="okular"}
+]
+[open]
+prepend_rules = [
+	{ mime = "audio/*", use = "kew" },
+	# cvlc has issues with being fullscreen and switching windows
+	{ mime = "video/*", use = "mpv" },
+	{ mime = "image/*", use = ["feh", "qimgv"]},
+	{ mime = "application/pdf", use = ["zathura", "okular"]}
+]
+[mgr]
+sort_by = "natural"
