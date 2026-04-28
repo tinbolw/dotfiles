@@ -14,6 +14,7 @@ Keeping it fast and simple(ish).
 | Display Manager | None (getty) |
 | File Manager | [yazi](https://github.com/sxyazi/yazi) |
 | Image Viewer | [feh](https://github.com/derf/feh)/[qimgv](https://github.com/easymodo/qimgv) |
+| Launcher | [vicinae](https://github.com/vicinaehq/vicinae) |
 | Music Player | [kew](https://github.com/ravachol/kew) |
 | Shell | [Dank Material Shell](https://github.com/AvengeMedia/DankMaterialShell) |
 | Terminal Emulator | [foot](https://codeberg.org/dnkl/foot) |
