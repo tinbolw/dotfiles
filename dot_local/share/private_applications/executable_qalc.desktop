@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=qalc
+GenericName=Calculator
+Comment=A multi-purpose cross-platform desktop calculator
+Exec=bash -c "foot --app-id="qalc" qalc"
+Icon=qalc
+Type=Application
+Categories=Calculator;
+StartupNotify=false

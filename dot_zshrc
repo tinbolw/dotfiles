@@ -112,9 +112,6 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # alias reboot="sleep 0.5 && hyprshutdown -t 'Restarting...' --post-cmd 'reboot'"
 # alias poweroff="sleep 0.5 && hyprshutdown -t 'Shutting down...' --post-cmd 'shutdown -P 0'"
-export PATH=/home/tinbolw/.local/bin:$PATH
-
-export TERM=xterm-256color
 
 # yazi
 function y() {
