@@ -18,7 +18,10 @@
    },
    "theme": {
       "dark": {
-         "name": "evergarden-fall"
+         "name": "matugen"
       }
+   },
+   "launcher_window": {
+      "opacity": 0.8
    }
 }

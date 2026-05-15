@@ -459,12 +459,12 @@
           "enabled": true
         }
       ],
-      "spacing": 4,
+      "spacing": 0,
       "innerPadding": 4,
       "bottomGap": 0,
-      "transparency": 0.65,
-      "widgetTransparency": 0.65,
-      "squareCorners": false,
+      "transparency": 0.8,
+      "widgetTransparency": 0.8,
+      "squareCorners": true,
       "noBackground": false,
       "gothCornersEnabled": false,
       "gothCornerRadiusOverride": false,
