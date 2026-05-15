@@ -43,12 +43,19 @@ function fish_prompt --description 'Write out the prompt'
                 set color_cwd $fish_color_cwd
                 set suffix '$'
         end
+
+		# chezmoi indicator
+		if set -q CHEZMOI
+				set_color blue
+      		  	printf '(chezmoi) '
+				set_color --reset
+	    end
     
         # PWD
         set_color $color_cwd
         echo -n (prompt_pwd)
         set_color --reset
-    
+
         printf '%s ' (fish_vcs_prompt)
     
         set -l status_color (set_color $fish_color_status)
