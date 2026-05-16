@@ -25,4 +25,6 @@ https://wallhaven.cc/user/tinbolw/favorites/2141087
 
 ## Gallery
 ### Desktop
-![theearth](/gallery/theearth.png)
+![Desktop](/gallery/theearth.png)
+### Theme
+![Theme](/gallery/theme.png)
