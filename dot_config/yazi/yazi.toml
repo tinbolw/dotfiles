@@ -1,21 +1,21 @@
 [opener]
 kew = [
-	{ run = "bash -c \"(foot kew play %s)\"", orphan = false, for = "unix", desc = "kew" },
+	{ run = "bash -c \"(foot kew play %s)\"", orphan = true, for = "unix", desc = "kew" },
 ]
 mpv = [
-	{ run = "mpv %s", orphan = false, for = "unix", desc = "mpv"}
+	{ run = "mpv %s", orphan = true, for = "unix", desc = "mpv"}
 ]
 feh = [
-	{ run = "feh %s", orphan = false, for = "unix", desc = "feh"}
+	{ run = "feh %s", orphan = true, for = "unix", desc = "feh"}
 ]
 qimgv = [
-	{ run = "qimgv %s", orphan = false, for = "unix", desc = "qimgv"}
+	{ run = "qimgv %s", orphan = true, for = "unix", desc = "qimgv"}
 ]
 zathura = [
-	{ run = "zathura %s", orphan = false, for = "unix", desc="zathura"}
+	{ run = "zathura %s", orphan = true, for = "unix", desc="zathura"}
 ]
 okular = [
-	{ run = "okular %s", orphan = false, for = "unix", desc="okular"}
+	{ run = "okular %s", orphan = true, for = "unix", desc="okular"}
 ]
 [open]
 prepend_rules = [
