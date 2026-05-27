@@ -433,7 +433,8 @@
       "centerWidgets": [
         {
           "id": "focusedWindow",
-          "enabled": true
+          "enabled": true,
+          "focusedWindowCompactMode": false
         }
       ],
       "rightWidgets": [
@@ -493,7 +494,9 @@
       "shadowOpacity": 60,
       "shadowColorMode": "text",
       "shadowCustomColor": "#000000",
-      "clickThrough": false
+      "clickThrough": false,
+      "widgetPadding": 8,
+      "removeWidgetPadding": false
     }
   ],
   "desktopClockEnabled": false,

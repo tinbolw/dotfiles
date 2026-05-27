@@ -121,6 +121,12 @@ animations {
 }
 
 window-rule {
+    match app-id="vesktop"
+    open-on-workspace "discord"
+    open-maximized true
+    scroll-factor 0.3
+}
+window-rule {
     match app-id="discord"
     open-on-workspace "discord"
     open-maximized true
