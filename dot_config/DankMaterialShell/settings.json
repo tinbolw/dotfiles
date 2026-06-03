@@ -221,8 +221,8 @@
   "launcherLogoBrightness": 0.5,
   "launcherLogoContrast": 1,
   "launcherLogoSizeOffset": 0,
-  "fontFamily": "Inter Variable",
-  "monoFontFamily": "Fira Code",
+  "fontFamily": "JetBrainsMono Nerd Font Propo",
+  "monoFontFamily": "JetBrainsMono Nerd Font Propo",
   "fontWeight": 400,
   "fontScale": 1.25,
   "notepadUseMonospace": true,
@@ -411,14 +411,6 @@
       "showOnLastDisplay": true,
       "leftWidgets": [
         {
-          "id": "privacyIndicator",
-          "enabled": true
-        },
-        {
-          "id": "idleInhibitor",
-          "enabled": true
-        },
-        {
           "id": "memUsage",
           "enabled": true,
           "minimumWidth": true,
@@ -428,6 +420,10 @@
           "id": "cpuUsage",
           "enabled": true,
           "minimumWidth": true
+        },
+        {
+          "id": "idleInhibitor",
+          "enabled": true
         }
       ],
       "centerWidgets": [
@@ -458,13 +454,17 @@
         {
           "id": "notificationButton",
           "enabled": true
+        },
+        {
+          "id": "privacyIndicator",
+          "enabled": true
         }
       ],
       "spacing": 0,
-      "innerPadding": 4,
+      "innerPadding": 0,
       "bottomGap": 0,
-      "transparency": 0.8,
-      "widgetTransparency": 0.8,
+      "transparency": 0.6,
+      "widgetTransparency": 0.6,
       "squareCorners": true,
       "noBackground": false,
       "gothCornersEnabled": false,
