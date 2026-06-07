@@ -74,16 +74,18 @@ layout {
     default-column-width { proportion 0.5; }
 
     focus-ring {
+		off
         width 4
         active-color "#7fc8ff"
         inactive-color "#505050"
     }
 
     border {
-        off
+        on
 
         width 4
-        active-color "#ffc87f"
+    //    active-color "#ffc87f"
+        active-color "#7fc8ff"
         inactive-color "#505050"
 
         urgent-color "#9b0000"
@@ -106,6 +108,7 @@ layout {
 spawn-sh-at-startup "$TERMINAL"
 spawn-sh-at-startup "$TERMINAL"
 spawn-sh-at-startup "zen-browser"
+spawn-sh-at-startup "awww-daemon"
 spawn-at-startup "vicinae" "server"
 
 hotkey-overlay {
@@ -168,12 +171,12 @@ window-rule {
 }
 window-rule {
   match app-id="vicinae"
+  geometry-corner-radius 16
   background-effect {
     blur true
     xray false
   }
 }
-
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
@@ -216,6 +219,7 @@ layer-rule {
 }
 layer-rule {
   match namespace="vicinae"
+  geometry-corner-radius 16
   background-effect {
     blur true
     xray false
@@ -223,6 +227,13 @@ layer-rule {
 }
 layer-rule {
     place-within-backdrop true
+}
+layer-rule {
+    match layer="top"
+    match layer="overlay"
+    background-effect {
+        xray false
+    }
 }
 
 binds {
@@ -396,7 +407,7 @@ binds {
 }
 
 blur {
-	passes 1
+	passes 4
 	offset 1.0
 }
 

@@ -13,6 +13,7 @@
    "close_on_focus_loss": false,
    "font": {
       "normal": {
+         "family": "JetBrainsMono Nerd Font",
          "size": 12
       }
    },
@@ -22,6 +23,17 @@
       }
    },
    "launcher_window": {
-      "opacity": 0.8
+      "opacity": 0.6
+   },
+   "providers": {
+      "@tinbolw/wallpapers": {
+         "preferences": {
+            "wallpaper-folder": "/home/tinbolw/Pictures/Wallpapers",
+            "command": "awww img --transition-type wipe --transition-angle 30 --transition-step 90 --transition-fps 120 %p && matugen --prefer darkness image %p && dms matugen generate --state-dir ~/.cache/DankMaterialShell/ --shell-dir /usr/share/quickshell/dms/ --config-dir ~/.config/DankMaterialShell/ --value %p",
+            "wallpaperFolder": "/home/tinbolw/Pictures/Wallpapers",
+            "specifier": "%p",
+            "columns": "4"
+         }
+      }
    }
 }
