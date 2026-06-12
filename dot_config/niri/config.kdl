@@ -211,6 +211,18 @@ window-rule {
 		xray false
 	}
 }
+window-rule {
+    match app-id="code"
+    // match app-id="code-oss"
+
+	// border {
+    //  off
+    // }
+
+    geometry-corner-radius 10
+    clip-to-geometry true
+    // Optional: set custom corner radiuses to match your theme
+}
 layer-rule {
 	match namespace="^dms:.*"
 	background-effect {
