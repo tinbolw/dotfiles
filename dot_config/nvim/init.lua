@@ -14,10 +14,6 @@ vim.opt.smarttab = true
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
--- Prevent all folds from closing automatically when opening a file
-vim.opt.foldlevel = 99
-vim.opt.foldlevelstart = 99
-
 -- vim.opt.winborder = 'single'
 
 vim.diagnostic.config({
