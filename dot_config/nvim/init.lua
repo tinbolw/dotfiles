@@ -1,74 +1,24 @@
-vim.g.mapleader = " "
+-- OPTIONS
+vim.opt.splitright = true
+vim.opt.splitbelow = true
 
-require("config.lazy")
+vim.opt.number = true
+vim.opt.relativenumber = true
 
-require('neo-tree').setup({
-  -- options go here
-  auto_clean_after_session_restore = false,
-  event_handlers = {
-    {
-      event = "neo_tree_buffer_enter",
-      handler = function()
-        vim.opt_local.number = true          -- Show absolute line numbers
-        vim.opt_local.relativenumber = true  -- Show relative line numbers
-      end,
-    },
-    {
-      event = "file_opened",
-      handler = function()
-        vim.opt.number = true
-	vim.opt.relativenumber = true
-      end
-    }
-  },
-  window = {
-    width = 30,
-    mappings = {
-      ['.'] = 'toggle_hidden',
-    },
-  },
-  filesystem = {
-    hijack_netrw_behavior = "open_default",
-    use_libuv_file_watcher = true,
-	follow_current_file = { enabled = true },
-  },
-})
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.tabstop = 4
+vim.opt.smarttab = true
 
-require('auto-session').setup({
-  pre_save_cmds = { 'Neotree close' },
-  post_restore_cmds = { 'Neotree filesystem show' },
-})
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
-require("telescope").setup {
-  extensions = {
-    ["ui-select"] = {
-      require("telescope.themes").get_dropdown {
-        -- even more opts
-      }
+-- Prevent all folds from closing automatically when opening a file
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
 
-      -- pseudo code / specification for writing custom displays, like the one
-      -- for "codeactions"
-      -- specific_opts = {
-      --   [kind] = {
-      --     make_indexed = function(items) -> indexed_items, width,
-      --     make_displayer = function(widths) -> displayer
-      --     make_display = function(displayer) -> function(e)
-      --     make_ordinal = function(e) -> string
-      --   },
-      --   -- for example to disable the custom builtin "codeactions" display
-      --      do the following
-      --   codeactions = false,
-      -- }
-    }
-  }
-}
-
-require("telescope").load_extension("ui-select")
-
-require('lualine').setup()
-
-vim.lsp.enable('ts_ls')
-vim.lsp.enable('pylsp')
+-- vim.opt.winborder = 'single'
 
 vim.diagnostic.config({
   -- Enable/disable inline virtual text at the end of the line
@@ -94,62 +44,52 @@ vim.diagnostic.config({
   },
 })
 
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.laststatus = 3
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-
-vim.o.winborder = 'single'
-vim.o.confirm = true
-vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-
 -- BINDS
--- noremap - binds to what the original keybind did by default
-vim.keymap.set('n', '<leader>p', '<cmd>Telescope find_files<cr>',
-	{ desc = 'Telescope files' })
-vim.keymap.set({'n', 't', 'v'}, '<leader>`', '<cmd>2ToggleTerm<cr>',
-	{ desc = 'Toggle terminal' })
-vim.keymap.set('t', '<leader><Esc>', [[<C-\><C-n>]], { noremap = true })
-vim.keymap.set('n', '<leader>g', '<cmd>lua _lazygit_toggle()<cr>', { silent = true, 
-	desc = 'Lazygit' })
-vim.keymap.set('n', '<leader>s', '<cmd>AutoSession search<cr>',
-	{ desc = 'AutoSession' })
-vim.keymap.set("n", "<Tab>", "<C-W>w", { noremap = true,
-	desc = 'Focus next split' })
-vim.keymap.set("n", "<S-Tab>", "<C-W>W", { noremap = true,
-	desc = 'Focus previous split' })
-vim.keymap.set("n", "<C-s>", "<cmd>Neotree toggle filesystem<cr>")
-vim.keymap.set("n", "<leader>i", vim.lsp.buf.implementation, { noremap = true,
-	desc = 'LSP: List implementations' })
-vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, { noremap = true,
-	desc = 'LSP: Code actions' })
-vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, { noremap = true,
-	desc = 'LSP: Display hover information' })
-vim.keymap.set("n", "<leader>/", "<cmd>Telescope keymaps<cr>")
+vim.g.mapleader = ' '
+vim.keymap.set('n', '<leader>p', '<cmd>Telescope find_files<cr>', { desc = 'Telescope find_files' })
+vim.keymap.set('n', '<leader>/', '<cmd>Telescope keymaps<cr>', { desc = 'Telescope keymaps' })
 
-local Terminal  = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({
-  cmd = "lazygit",
-  dir = "git_dir",
-  direction = "float",
-  float_opts = {
-    border = "double",
-  },
-  -- function to run on opening the terminal
-  on_open = function(term)
-    vim.cmd("startinsert!")
-    vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", {noremap = true, silent = true})
-  end,
-  -- function to run on closing the terminal
-  on_close = function(term)
-    vim.cmd("startinsert!")
-  end,
+vim.keymap.set('n', '<leader>t', '<cmd>terminal<cr>i', { desc = 'Launch terminal' })
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, desc = 'Unfocus terminal' })
+
+vim.keymap.set('n', '<Tab>', '<C-W>w', { noremap = true, desc = 'Focus next split' })
+vim.keymap.set('n', '<S-Tab>', '<C-W>W', { noremap = true, desc = 'Focus previous split' })
+vim.keymap.set('n', '<leader>sh', '<C-W>s', { noremap = true, desc = 'Create horizontal split' })
+vim.keymap.set('n', '<leader>sv', '<C-W>v', { noremap = true, desc = 'Create vertical split' })
+vim.keymap.set('n', '<leader>sq', '<C-W>c', { noremap = true, desc = 'Close focused split' })
+
+vim.keymap.set('n', '<leader>q', '<cmd>b#|bd#<cr>', { desc = 'Close focused buffer' })
+
+vim.keymap.set('n', '<leader>b.', '<cmd>bnext<cr>', { desc = 'Focus next buffer' })
+vim.keymap.set('n', '<leader>b,', '<cmd>bprev<cr>', { desc = 'Focus previous buffer' })
+vim.keymap.set('n', '<leader>b/', '<cmd>b#<cr>', { desc = 'Focus alternate buffer' })
+
+vim.keymap.set('n', '<leader>t.', '<cmd>tabnext<cr>', { desc = 'Focus next tab' })
+vim.keymap.set('n', '<leader>t,', '<cmd>tabprevious<cr>', { desc = 'Focus previous tab' })
+vim.keymap.set('n', '<leader>t/', '<cmd>tabnew<cr>', { desc = 'Create new tab' })
+vim.keymap.set('n', '<leader>tq', '<cmd>tabclose<cr>', { desc = 'Close focused tab' })
+
+-- PLUGINS
+require('config.lazy')
+
+vim.cmd[[colorscheme tokyonight]]
+
+require('nvim-treesitter').setup {
+  -- Directory to install parsers and queries to (prepended to `runtimepath` to have priority)
+  install_dir = vim.fn.stdpath('data') .. '/site'
+}
+
+-- LSP
+vim.lsp.enable('ts_ls')
+
+-- SYNTAX HIGHLIGHTING
+local languages = {
+    'javascript',
+    'typescript'
+}
+
+require('nvim-treesitter').install(languages)
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = languages,
+  callback = function() vim.treesitter.start() end,
 })
-
-function _lazygit_toggle()
-  lazygit:toggle()
-end
-
