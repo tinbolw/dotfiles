@@ -14,6 +14,10 @@ vim.opt.smarttab = true
 vim.opt.foldmethod = 'expr'
 vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+
 -- vim.opt.winborder = 'single'
 
 vim.diagnostic.config({
@@ -45,7 +49,7 @@ vim.g.mapleader = ' '
 vim.keymap.set('n', '<leader>p', '<cmd>Telescope find_files<cr>', { desc = 'Telescope find_files' })
 vim.keymap.set('n', '<leader>/', '<cmd>Telescope keymaps<cr>', { desc = 'Telescope keymaps' })
 
-vim.keymap.set('n', '<leader>t', '<cmd>terminal<cr>i', { desc = 'Launch terminal' })
+vim.keymap.set('n', '<leader>`', '<cmd>terminal<cr>i', { desc = 'Launch terminal' })
 vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, desc = 'Unfocus terminal' })
 
 vim.keymap.set('n', '<Tab>', '<C-W>w', { noremap = true, desc = 'Focus next split' })
