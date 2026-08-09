@@ -13,7 +13,7 @@
    "close_on_focus_loss": false,
    "font": {
       "normal": {
-         "family": "JetBrainsMono Nerd Font",
+         "family": "Ubuntu Nerd Font",
          "size": 12
       }
    },
@@ -23,7 +23,18 @@
       }
    },
    "launcher_window": {
-      "opacity": 0.6
+      "opacity": 0.5,
+      "client_side_decorations": {
+         "enabled": true,
+         "shadow_size": 0
+      },
+      "compact_mode": {
+         "enabled": false
+      },
+      "layer_shell": {
+         "enabled": true
+      },
+      "material": "none"
    },
    "providers": {
       "@tinbolw/wallpapers": {
