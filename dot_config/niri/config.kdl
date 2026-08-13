@@ -44,9 +44,6 @@ input {
 }
 
 output "eDP-1" {
-    // mode "2560x1440@120.000"
-    // mode "2560x1440@60.001"
-    // scale 1.25
     scale 1
     transform "normal"
     position x=0 y=0
@@ -124,12 +121,6 @@ animations {
 }
 
 window-rule {
-    match app-id="vesktop"
-    open-on-workspace "discord"
-    open-maximized true
-    scroll-factor 0.3
-}
-window-rule {
     match app-id="discord"
     open-on-workspace "discord"
     open-maximized true
@@ -141,7 +132,7 @@ window-rule {
     open-on-workspace "2"
 }
 window-rule {
-    match app-id="md.Obsidian"
+    match app-id="md.obsidian.Obsidian"
     open-on-workspace "3"
     scroll-factor 0.3
     open-maximized true
@@ -169,14 +160,6 @@ window-rule {
     match app-id=r#"^org\.wezfurlong\.wezterm$"#
     default-column-width {}
 }
-// window-rule {
-//   match app-id="vicinae"
-//   geometry-corner-radius 16
-//   background-effect {
-//     blur true
-//     xray false
-//   }
-// }
 // Open the Firefox picture-in-picture player as floating by default.
 window-rule {
     // This app-id regular expression will work for both:
@@ -213,15 +196,9 @@ window-rule {
 }
 window-rule {
     match app-id="code"
-    // match app-id="code-oss"
-
-	// border {
-    //  off
-    // }
 
     geometry-corner-radius 10
     clip-to-geometry true
-    // Optional: set custom corner radiuses to match your theme
 }
 layer-rule {
 	match namespace="^dms:.*"
@@ -392,7 +369,6 @@ binds {
     Mod+W { toggle-column-tabbed-display; }
 
     Print { screenshot; }
-    // Print { spawn-sh "flameshot gui"; }
     Ctrl+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
@@ -410,8 +386,7 @@ binds {
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
-    // Mod+Shift+V { spawn-sh "dms ipc call clipboard toggle";  }
-	Mod+Shift+V repeat=false { spawn "vicinae" "vicinae://launch/clipboard/history"; }
+    Mod+Shift+V repeat=false { spawn "vicinae" "vicinae://launch/clipboard/history"; }
 
     Mod+E { spawn-sh "$TERMINAL yazi"; }
 
