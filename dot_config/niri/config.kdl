@@ -121,6 +121,14 @@ animations {
 }
 
 window-rule {
+    match at-startup=true
+    match app-id="discord"
+    match app-id="md.obsidian.Obsidian"
+    // match app-id="zen"
+    open-focused false
+}
+
+window-rule {
     match app-id="discord"
     open-on-workspace "discord"
     open-maximized true
@@ -132,8 +140,14 @@ window-rule {
     open-on-workspace "2"
 }
 window-rule {
-    match app-id="md.obsidian.Obsidian"
+    match app-id="md.obsidian.Obsidian" title="UW"
     open-on-workspace "3"
+    scroll-factor 0.3
+    open-maximized true
+}
+window-rule {
+    match app-id="md.obsidian.Obsidian" title="Personal"
+    open-on-workspace "4"
     scroll-factor 0.3
     open-maximized true
 }
