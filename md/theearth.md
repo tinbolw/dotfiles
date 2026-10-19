@@ -1,9 +1,10 @@
-# theearth (ThinkPad T480)
+# theearth (Dell Latitude 7320)
+> Got this for $60!
 ## Specs
 | Component |  |
 | - | - |
-| Display | 14", 2560x1440@120 |
-| CPU | Intel i5-8350U |
-| GPU | Intel UHD Graphics 620 |
-| Memory | 8 GB DDR4 |
-| Disk | Silicon Power P34A60 256 GB SSD |
+| Display | 13", 1920x1080@60 |
+| CPU | i5-1145G7 |
+| GPU | Intel Iris Xe Graphics |
+| Memory | 16 GB DDR4 |
+| Disk | PC SN530 NVMe WDC 256GB |
