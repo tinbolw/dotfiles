@@ -6,11 +6,31 @@ output_path = '~/.local/share/vicinae/themes/matugen.toml'
 post_hook = 'vicinae theme set matugen'
 
 # VS Code matugen extension
-[templates.vscode-raw]
-input_path = './templates/vscode-colors'
-output_path = '~/.cache/matugen/vscode-colors'
+# [templates.vscode-raw]
+# input_path = './templates/vscode-colors'
+# output_path = '~/.cache/matugen/vscode-colors'
 
-[templates.vscode-json]
-input_path = './templates/vscode-colors.json'
-output_path = '~/.cache/matugen/vscode-colors.json'
+# [templates.vscode-json]
+# input_path = './templates/vscode-colors.json'
+# output_path = '~/.cache/matugen/vscode-colors.json'
 
+[templates.yazi]
+input_path = '~/.config/matugen/templates/yazi.toml'
+output_path = '~/.config/yazi/theme.toml'
+
+[templates.niri]
+input_path = '~/.config/matugen/templates/niri.toml'
+output_path = '~/.config/niri/colors.kdl'
+post_hook = 'niri msg action load-config-file'
+
+[templates.obsidianPersonal]
+input_path = '~/.config/matugen/templates/obsidian.css'
+output_path = '~/Documents/Obsidian/Personal/.obsidian/snippets/matugen.css'
+
+[templates.obsidianUW]
+input_path = '~/.config/matugen/templates/obsidian.css'
+output_path = '~/Documents/Obsidian/UW/.obsidian/snippets/matugen.css'
+
+[templates.vesktop]
+input_path = '~/.config/matugen/templates/vesktop.css'
+output_path = '~/.config/vesktop/themes/matugen.theme.css'

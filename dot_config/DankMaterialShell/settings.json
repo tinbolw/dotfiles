@@ -1,9 +1,12 @@
 {
   "currentThemeName": "dynamic",
   "currentThemeCategory": "dynamic",
-  "runUserMatugenTemplates": false,
   "popupTransparency": 0.5,
   "cornerRadius": 12,
+  "clockFormat": "24h",
+  "showSeconds": true,
+  "padHours12Hour": true,
+  "useFahrenheit": true,
   "motionEffect": 2,
   "blurEnabled": true,
   "controlCenterShowMicPercent": true,
@@ -51,11 +54,33 @@
   ],
   "runningAppsCurrentWorkspace": false,
   "appIdSubstitutions": [],
-  "weatherEnabled": false,
-  "networkPreference": "wifi",
+  "useAutoLocation": true,
+  "dashTabs": [
+    {
+      "id": "overview",
+      "enabled": true
+    },
+    {
+      "id": "media",
+      "enabled": true
+    },
+    {
+      "id": "wallpaper",
+      "enabled": false
+    },
+    {
+      "id": "weather",
+      "enabled": true
+    },
+    {
+      "id": "settings",
+      "enabled": true
+    }
+  ],
+  "networkPreference": "ethernet",
   "cursorSettings": {
     "theme": "System Default",
-    "size": 36,
+    "size": 24,
     "niri": {
       "hideWhenTyping": false,
       "hideAfterInactiveMs": 0
@@ -71,16 +96,17 @@
   },
   "fontFamily": "Google Sans Flex",
   "monoFontFamily": "Noto Sans Mono",
-  "fontScale": 1.25,
   "acMonitorTimeout": 600,
   "acLockTimeout": 600,
   "acSuspendTimeout": 1200,
   "batteryMonitorTimeout": 600,
   "batteryLockTimeout": 600,
   "batterySuspendTimeout": 1200,
+  "batteryNotifyLow": true,
   "lockBeforeSuspend": true,
   "fadeToLockGracePeriod": 10,
   "fadeToDpmsGracePeriod": 10,
+  "matugenTemplateNiri": false,
   "matugenTemplateHyprland": false,
   "matugenTemplateMangowc": false,
   "matugenTemplateFirefox": false,
@@ -92,11 +118,11 @@
   "matugenTemplateAlacritty": false,
   "matugenTemplateNeovim": true,
   "matugenTemplateWezterm": false,
-  "matugenTemplateVscode": false,
   "matugenTemplateEmacs": false,
   "notificationOverlayEnabled": true,
   "enableFprint": true,
   "lockPamExternallyManaged": true,
+  "lockScreenWallpaperPath": "/home/tinbolw/Pictures/Wallpapers/wallhaven-wyy9rx.png",
   "osdAlwaysShowValue": true,
   "osdMediaPlaybackEnabled": true,
   "osdPowerProfileEnabled": true,
@@ -137,6 +163,10 @@
         {
           "id": "idleInhibitor",
           "enabled": true
+        },
+        {
+          "id": "notepadButton",
+          "enabled": false
         }
       ],
       "centerWidgets": [
@@ -174,7 +204,7 @@
         }
       ],
       "spacing": 0,
-      "innerPadding": -2,
+      "innerPadding": -8,
       "bottomGap": 0,
       "transparency": 0.5,
       "widgetTransparency": 0.6,
@@ -215,7 +245,9 @@
       "maximizeWidgetText": false,
       "maximizeWidgetIcons": false,
       "batteryColorMode": "theme",
-      "attachToScreenEdge": false
+      "attachToScreenEdge": false,
+      "island": false,
+      "iconScale": 1
     }
   ],
   "desktopClockCustomColor": {
@@ -229,7 +261,8 @@
     "hslHue": -1,
     "hslSaturation": 0,
     "hslLightness": 1,
-    "valid": true
+    "valid": true,
+    "rgba": -1
   },
   "systemMonitorCustomColor": {
     "r": 1,
@@ -242,11 +275,21 @@
     "hslHue": -1,
     "hslSaturation": 0,
     "hslLightness": 1,
-    "valid": true
+    "valid": true,
+    "rgba": -1
   },
   "builtInPluginSettings": {
     "dms_settings_search": {
       "trigger": "?"
+    },
+    "dms_clipboard_search": {
+      "trigger": "cb"
+    },
+    "dms_power": {
+      "trigger": "pw"
+    },
+    "dms_qr_generator": {
+      "trigger": "qrg"
     }
   },
   "frameThickness": 2,

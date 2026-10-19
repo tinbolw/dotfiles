@@ -10,7 +10,10 @@ if status --is-login
 end
 
 if status is-interactive
-    keychain --eval --quiet --noask id_ed25519 | source
+    eval (keychain --eval --quiet)
+    # eval "$(keychain add --eval $KEYCHAIN_KEYS)"
+else if status is-login
+    eval "$(keychain add --eval --noask)"
 end
 
 function y
@@ -30,4 +33,3 @@ set -gx PNPM_HOME "/home/tinbolw/.local/share/pnpm"
 if not string match -q -- "$PNPM_HOME/bin" $PATH
   set -gx PATH "$PNPM_HOME/bin" $PATH
 end
-# pnpm end

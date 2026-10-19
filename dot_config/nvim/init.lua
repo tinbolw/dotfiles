@@ -1,3 +1,6 @@
+if vim.g.vscode then
+    -- VSCode extension
+else
 -- OPTIONS
 vim.opt.splitright = true
 vim.opt.splitbelow = true
@@ -99,3 +102,4 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern = languages,
   callback = function() vim.treesitter.start() end,
 })
+end

@@ -29,7 +29,9 @@ input {
 
     touchpad {
         natural-scroll
-        scroll-factor 0.3
+        scroll-factor horizontal=0.3 vertical=0.1
+        tap
+        dwt
     }
 
     mouse {
@@ -44,7 +46,7 @@ input {
 }
 
 output "eDP-1" {
-    scale 1
+    scale 1.25
     transform "normal"
     position x=0 y=0
 }
@@ -59,7 +61,7 @@ output "HDMI-A-2" {
 
 layout {
     background-color "transparent"
-    gaps 12
+    gaps 8
     center-focused-column "never"
 
     preset-column-widths {
@@ -104,8 +106,8 @@ layout {
 
 spawn-sh-at-startup "$TERMINAL"
 spawn-sh-at-startup "$TERMINAL"
-spawn-sh-at-startup "zen-browser"
-spawn-sh-at-startup "awww-daemon"
+spawn-sh-at-startup "zen"
+// spawn-sh-at-startup "awww-daemon"
 spawn-at-startup "vicinae" "server"
 
 hotkey-overlay {
@@ -123,16 +125,22 @@ animations {
 window-rule {
     match at-startup=true
     match app-id="discord"
+    match app-id="vesktop"
     match app-id="md.obsidian.Obsidian"
     // match app-id="zen"
     open-focused false
 }
-
+window-rule {
+    match app-id="org.gnome.Nautilus"
+    match app-id="org.gnome.Papers"
+    scroll-factor 3
+}
 window-rule {
     match app-id="discord"
+    match app-id="vesktop"
     open-on-workspace "discord"
     open-maximized true
-    scroll-factor 0.3
+    // scroll-factor 0.3
 }
 window-rule {
     match app-id="zen"
@@ -142,13 +150,13 @@ window-rule {
 window-rule {
     match app-id="md.obsidian.Obsidian" title="UW"
     open-on-workspace "3"
-    scroll-factor 0.3
+    // scroll-factor 0.3
     open-maximized true
 }
 window-rule {
     match app-id="md.obsidian.Obsidian" title="Personal"
     open-on-workspace "4"
-    scroll-factor 0.3
+    // scroll-factor 0.3
     open-maximized true
 }
 window-rule {
@@ -238,6 +246,13 @@ layer-rule {
         xray false
     }
 }
+layer-rule {
+    match namespace="skwd-wall"
+    background-effect {
+        blur true
+        xray false
+    }
+}
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
@@ -255,8 +270,10 @@ binds {
     XF86AudioPrev        allow-when-locked=true { spawn-sh "playerctl previous"; }
     XF86AudioNext        allow-when-locked=true { spawn-sh "playerctl next"; }
 
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "10" "backlight:intel_backlight"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "10" "backlight:intel_backlight"; }
+
+    F9 repeat=false { spawn-sh "dms ipc call notepad toggle"; }
 
     Mod+O repeat=false { toggle-overview; }
 
@@ -382,9 +399,11 @@ binds {
 
     Mod+W { toggle-column-tabbed-display; }
 
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Print { spawn "dms" "screenshot"; }
+    Ctrl+Print { spawn "dms" "screenshot" "full"; }
+    Alt+Print { spawn "dms" "screenshot" "window"; }
+
+    Mod+T hotkey-overlay-title="Skwd-wall" { spawn "skwd-wall-v2"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
@@ -402,7 +421,7 @@ binds {
 
     Mod+Shift+V repeat=false { spawn "vicinae" "vicinae://launch/clipboard/history"; }
 
-    Mod+E { spawn-sh "$TERMINAL yazi"; }
+    Mod+E { spawn "nautilus"; }
 
     Ctrl+Shift+Escape { spawn-sh "$TERMINAL btm -r 500"; }
 }
@@ -415,3 +434,7 @@ blur {
 include "dms/binds.kdl"
 
 include "dms/cursor.kdl"
+include "dms/outputs.kdl"
+include "./colors.kdl"
+
+include "animations/glide-edit.kdl"

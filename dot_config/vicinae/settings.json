@@ -38,9 +38,10 @@
    },
    "providers": {
       "@tinbolw/wallpapers": {
+         "enabled": false,
          "preferences": {
             "wallpaper-folder": "/home/tinbolw/Pictures/Wallpapers",
-            "command": "awww img --transition-type wipe --transition-angle 30 --transition-step 90 --transition-fps 120 %p &&\nmatugen --prefer darkness image %p &&\ndms matugen generate --state-dir ~/.cache/DankMaterialShell/ --shell-dir /usr/share/quickshell/dms/ --config-dir ~/.config/DankMaterialShell/ --value %p",
+            "command": "awww img --transition-type wipe --transition-angle 30 --transition-step 90 --transition-fps 60 %p && dms ipc call wallpaper set %p",
             "wallpaperFolder": "/home/tinbolw/Pictures/Wallpapers",
             "specifier": "%p",
             "columns": "4"
