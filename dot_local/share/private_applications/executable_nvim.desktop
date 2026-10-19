@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=nvim
-GenericName=Text Editor
-Comment=Text Editor
-Exec=bash -c "foot --app-id="nvim" nvim"
-Icon=nvim
-Type=Application
-Categories=Utility;
-StartupNotify=false
