@@ -1,0 +1,58 @@
+{
+  "components": {
+    "wallpaperSelector": {
+      "displayMode": "wall",
+      "enabled": true,
+      "gridColumns": 4,
+      "gridLayout": "uniform",
+      "gridRoundCorners": true,
+      "gridRows": 5,
+      "lastAppliedKey": "static:wallhaven-x136zv.jpg",
+      "showTypeBadges": false,
+      "startPosition": "applied"
+    }
+  },
+  "features": {
+    "matugen": true
+  },
+  "filterBar": {
+    "orientation": "horizontal",
+    "show": {
+      "colors": false,
+      "sort": {
+        "color": false,
+        "minimalist": false,
+        "pop": false,
+        "res": false,
+        "richness": false
+      }
+    }
+  },
+  "general": {
+    "closeOnSelection": true,
+    "filterBarAlwaysVisible": true,
+    "maxFps": 60,
+    "notifyOnWallpaperChange": false,
+    "randomRotate": false,
+    "uiScale": 1.25
+  },
+  "niri": {
+    "overviewBackdrop": false,
+    "overviewMode": "separate"
+  },
+  "paper": {
+    "performanceMode": false
+  },
+  "postProcessing": [],
+  "theme": {
+    "authority": "dms",
+    "engine": "matugen",
+    "policy": "wallpaper",
+    "targets": [
+      "dms"
+    ]
+  },
+  "transition": {
+    "shader": "random"
+  }
+}
