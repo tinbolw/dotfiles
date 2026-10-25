@@ -1,5 +1,5 @@
 # dotfiles
-Keeping it fast and simple(ish).
+Keeping it fast and simple.
 
 ## Hosts:
 | Hostname | Host | Specs |
@@ -17,7 +17,7 @@ Keeping it fast and simple(ish).
 | Image Viewer | [Loupe](https://github.com/GNOME/loupe) |
 | Launcher | [vicinae](https://github.com/vicinaehq/vicinae) |
 | Music Player | [Decibels](https://github.com/GNOME/decibels) |
-| Shell | [Dank Material Shell](https://github.com/AvengeMedia/DankMaterialShell) |
+| Shell | [Dux Shell](https://github.com/duxlabs-dev/dux-shell) |
 | Terminal Emulator | [foot](https://codeberg.org/dnkl/foot) |
 | Video Player | [mpv](https://github.com/mpv-player/mpv)|
 
