@@ -16,15 +16,6 @@ else if status is-login
     eval "$(keychain add --eval --noask)"
 end
 
-function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	command yazi $argv --cwd-file="$tmp"
-	if read -z cwd < "$tmp"; and [ "$cwd" != "$PWD" ]; and test -d "$cwd"
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
-end
-
 set -x N_PREFIX "$HOME/n"; contains "$N_PREFIX/bin" $PATH; or set -a PATH "$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 zoxide init fish | source
 
@@ -33,3 +24,5 @@ set -gx PNPM_HOME "/home/tinbolw/.local/share/pnpm"
 if not string match -q -- "$PNPM_HOME/bin" $PATH
   set -gx PATH "$PNPM_HOME/bin" $PATH
 end
+
+cat ~/note

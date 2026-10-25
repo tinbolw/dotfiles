@@ -109,6 +109,7 @@ spawn-sh-at-startup "$TERMINAL"
 spawn-sh-at-startup "zen"
 // spawn-sh-at-startup "awww-daemon"
 spawn-at-startup "vicinae" "server"
+spawn-at-startup "sh" "-c" "~/.local/bin/fix-dms-bar.sh"
 
 hotkey-overlay {
     skip-at-startup
@@ -223,7 +224,7 @@ window-rule {
     clip-to-geometry true
 }
 layer-rule {
-	match namespace="^dms:.*"
+	match namespace="^duxlabs:.*"
 	background-effect {
 		xray false
 	}
