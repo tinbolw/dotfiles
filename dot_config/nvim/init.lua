@@ -1,5 +1,34 @@
 if vim.g.vscode then
-    -- VSCode extension
+  -- VSCode extension
+  vim.g.mapleader = ' '
+  local vscode = require('vscode')
+  vim.keymap.set('n', 'K', function() vscode.action('editor.action.showHover') end)
+  vim.keymap.set('n', 'gd', function() vscode.action('editor.action.revealDefinition') end)
+  vim.keymap.set('n', '<leader>ca', function() vscode.action('editor.action.quickFix') end)
+-- BINDS
+vim.keymap.set('n', '<leader>p', '<cmd>Telescope find_files<cr>', { desc = 'Telescope find_files' })
+vim.keymap.set('n', '<leader>/', '<cmd>Telescope keymaps<cr>', { desc = 'Telescope keymaps' })
+
+vim.keymap.set('n', '<leader>`', '<cmd>terminal<cr>i', { desc = 'Launch terminal' })
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, desc = 'Unfocus terminal' })
+
+vim.keymap.set('n', '<Tab>', '<C-W>w', { noremap = true, desc = 'Focus next split' })
+vim.keymap.set('n', '<S-Tab>', '<C-W>W', { noremap = true, desc = 'Focus previous split' })
+vim.keymap.set('n', '<leader>sh', '<C-W>s', { noremap = true, desc = 'Create horizontal split' })
+vim.keymap.set('n', '<leader>sv', '<C-W>v', { noremap = true, desc = 'Create vertical split' })
+vim.keymap.set('n', '<leader>sq', '<C-W>c', { noremap = true, desc = 'Close focused split' })
+
+vim.keymap.set('n', '<leader>q', '<cmd>b#|bd#<cr>', { desc = 'Close focused buffer' })
+
+vim.keymap.set('n', '<leader>b.', '<cmd>bnext<cr>', { desc = 'Focus next buffer' })
+vim.keymap.set('n', '<leader>b,', '<cmd>bprev<cr>', { desc = 'Focus previous buffer' })
+vim.keymap.set('n', '<leader>b/', '<cmd>b#<cr>', { desc = 'Focus alternate buffer' })
+
+vim.keymap.set('n', '<leader>t.', '<cmd>tabnext<cr>', { desc = 'Focus next tab' })
+vim.keymap.set('n', '<leader>t,', '<cmd>tabprevious<cr>', { desc = 'Focus previous tab' })
+vim.keymap.set('n', '<leader>t/', '<cmd>tabnew<cr>', { desc = 'Create new tab' })
+vim.keymap.set('n', '<leader>tq', '<cmd>tabclose<cr>', { desc = 'Close focused tab' })
+
 else
 -- OPTIONS
 vim.opt.splitright = true

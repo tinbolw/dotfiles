@@ -161,7 +161,15 @@
     },
     {
       "id": "settings",
+      "enabled": false
+    },
+    {
+      "id": "wellbeing",
       "enabled": true
+    },
+    {
+      "id": "notifications",
+      "enabled": false
     }
   ],
   "networkPreference": "ethernet",
@@ -402,13 +410,21 @@
       "islandNotificationBadgeClearOnOpen": false,
       "islandSatelliteFollowInterfaceStyle": true,
       "autoHideStrict": false,
-      "islandUseOverlayLayer": true,
+      "islandUseOverlayLayer": false,
       "islandFreeEdgeMargin": 2,
       "islandSharedRouting": "normal",
       "islandReserveThickness": 40,
       "islandOuterGap": 4,
       "islandAlongOffset": 0,
-      "island": true
+      "island": true,
+      "islandRouteLauncher": "follow",
+      "islandRouteControlCenter": "follow",
+      "islandRouteDash": "island",
+      "islandRouteMedia": "island",
+      "islandRouteWeather": "island",
+      "islandRouteWallpaper": "island",
+      "islandDashTabs": true,
+      "islandMediaLyrics": true
     },
     {
       "id": "dot1792604604174",
@@ -521,7 +537,9 @@
       "followInterfaceStyle": false,
       "widgetFollowInterfaceStyle": false,
       "dot": true,
-      "islandFreeIconMode": "icon"
+      "islandFreeIconMode": "icon",
+      "islandCompactThickness": 38,
+      "islandSatelliteGap": 12
     }
   ],
   "builtInPluginSettings": {
@@ -535,7 +553,8 @@
       "trigger": "pw"
     },
     "dms_qr_generator": {
-      "trigger": "qrg"
+      "trigger": "qrg",
+      "enabled": false
     }
   },
   "frameThickness": 2,
@@ -555,11 +574,12 @@
       "showOnLastDisplay": true,
       "position": 1,
       "mode": "compact",
+      "middleClickAction": "close",
       "taskbarAlign": "center",
       "widgetExpansion": "popout",
       "iconSize": 40,
-      "spacing": 4,
-      "itemSpacing": 4,
+      "spacing": 8,
+      "itemSpacing": 8,
       "margin": 0,
       "bottomGap": 0,
       "transparency": 1,
@@ -622,6 +642,41 @@
   ],
   "dashCards": [
     {
+      "id": "notifications",
+      "w": 3,
+      "h": 4,
+      "col": 3,
+      "row": 0
+    },
+    {
+      "id": "calendar",
+      "w": 3,
+      "h": 3,
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "cpu",
+      "w": 2,
+      "h": 1,
+      "col": 0,
+      "row": 4
+    },
+    {
+      "id": "memory",
+      "w": 2,
+      "h": 1,
+      "col": 2,
+      "row": 4
+    },
+    {
+      "id": "disk",
+      "w": 2,
+      "h": 1,
+      "col": 4,
+      "row": 4
+    },
+    {
       "id": "clock",
       "w": 2,
       "h": 1,
@@ -634,53 +689,6 @@
       "h": 1,
       "col": 2,
       "row": 0
-    },
-    {
-      "id": "notifications",
-      "w": 3,
-      "h": 5,
-      "col": 3,
-      "row": 0
-    },
-    {
-      "id": "calendar",
-      "w": 3,
-      "h": 3,
-      "col": 0,
-      "row": 1
-    },
-    {
-      "id": "media",
-      "w": 3,
-      "h": 1,
-      "col": 0,
-      "row": 4
-    },
-    {
-      "id": "cpu",
-      "w": 2,
-      "h": 1,
-      "col": 0,
-      "row": 5
-    },
-    {
-      "id": "memory",
-      "w": 1,
-      "h": 1,
-      "col": 2,
-      "row": 5
-    },
-    {
-      "id": "disk",
-      "w": 1,
-      "h": 1,
-      "col": 3,
-      "row": 5
-    },
-    {
-      "id": "wellbeing",
-      "w": 2,
-      "h": 1
     }
   ],
   "lockScreenWidgetInstances": [
@@ -918,7 +926,24 @@
       }
     }
   ],
-  "dashOptions": {},
+  "dashOptions": {
+    "memory": {
+      "swap": true
+    }
+  },
   "connectedFrameBarStyleBackups": {},
-  "frameEnabled": false
+  "frameEnabled": false,
+  "launcherStyle": "island",
+  "rememberLastMode": false,
+  "dankLauncherV2IncludeFilesInAll": true,
+  "dankLauncherV2IncludeFoldersInAll": true,
+  "dashTabPosition": "auto",
+  "dashTabsEvenlySpaced": true,
+  "showWeekNumber": false,
+  "matugenSpec": "2021",
+  "density": "comfortable",
+  "osdWorkspaceEnabled": false,
+  "osdCapsLockEnabled": true,
+  "batteryChargeLimit": 100,
+  "batteryScaleToChargeLimit": false
 }

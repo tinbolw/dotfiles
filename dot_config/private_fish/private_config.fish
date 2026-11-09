@@ -26,3 +26,10 @@ if not string match -q -- "$PNPM_HOME/bin" $PATH
 end
 
 cat ~/note
+
+# pnpm
+set -gx PNPM_HOME '/home/tinbolw/.local/share/pnpm'
+if test "$PATH[1]" != "$PNPM_HOME/bin"
+  set -gx PATH "$PNPM_HOME/bin" $PATH
+end
+# pnpm end

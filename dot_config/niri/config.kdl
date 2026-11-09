@@ -107,9 +107,6 @@ layout {
 spawn-sh-at-startup "$TERMINAL"
 spawn-sh-at-startup "$TERMINAL"
 spawn-sh-at-startup "zen"
-// spawn-sh-at-startup "awww-daemon"
-spawn-at-startup "vicinae" "server"
-spawn-at-startup "sh" "-c" "~/.local/bin/fix-dms-bar.sh"
 
 hotkey-overlay {
     skip-at-startup
@@ -259,7 +256,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn-sh "$TERMINAL"; }
-	Alt+Space hotkey-overlay-title="Run an Application: vicinaehttps://github.com/vicinaehq/vicinae" repeat=false { spawn "vicinae" "toggle"; }
+    // Alt+Space hotkey-overlay-title="Run an Application: vicinaehttps://github.com/vicinaehq/vicinae" repeat=false { spawn "vicinae" "toggle"; }
+    // Alt+Space hotkey-overlay-title="" repeat=false { spawn-sh "dms ipc call island toggle launcher"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
@@ -400,6 +398,8 @@ binds {
 
     Mod+W { toggle-column-tabbed-display; }
 
+    
+
     Print { spawn "dms" "screenshot"; }
     Ctrl+Print { spawn "dms" "screenshot" "full"; }
     Alt+Print { spawn "dms" "screenshot" "window"; }
@@ -420,16 +420,23 @@ binds {
     Mod+Shift+E { quit; }
     Ctrl+Alt+Delete { quit; }
 
-    Mod+Shift+V repeat=false { spawn "vicinae" "vicinae://launch/clipboard/history"; }
+    // Mod+Shift+V repeat=false { spawn "vicinae" "vicinae://launch/clipboard/history"; }
 
     Mod+E { spawn "nautilus"; }
 
     Ctrl+Shift+Escape { spawn-sh "$TERMINAL btm -r 500"; }
+
+    Mod+Slash { spawn-sh "dms ipc call keybinds toggle niri"; }
 }
 
 blur {
 	passes 4
 	offset 1.0
+}
+
+cursor {
+        xcursor-theme "oguri-cap-multi"
+        xcursor-size 24
 }
 
 include "dms/binds.kdl"
