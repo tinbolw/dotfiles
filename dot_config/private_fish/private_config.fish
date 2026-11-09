@@ -1,4 +1,5 @@
 source $HOME/.config/fish/conf.d/environment.fish
+
 fish_add_path ~/.local/bin
 set -g fish_greeting
 
@@ -20,16 +21,10 @@ set -x N_PREFIX "$HOME/n"; contains "$N_PREFIX/bin" $PATH; or set -a PATH "$N_PR
 zoxide init fish | source
 
 # pnpm
-set -gx PNPM_HOME "/home/tinbolw/.local/share/pnpm"
-if not string match -q -- "$PNPM_HOME/bin" $PATH
-  set -gx PATH "$PNPM_HOME/bin" $PATH
-end
-
-cat ~/note
-
-# pnpm
 set -gx PNPM_HOME '/home/tinbolw/.local/share/pnpm'
 if test "$PATH[1]" != "$PNPM_HOME/bin"
   set -gx PATH "$PNPM_HOME/bin" $PATH
 end
 # pnpm end
+
+cat ~/note

@@ -1,7 +1,7 @@
 {
   "components": {
     "wallpaperSelector": {
-      "activeLayout": "My layout",
+      "activeLayout": "My layout 2",
       "displayMode": "wall",
       "enabled": true,
       "gridColumns": 4,
@@ -13,11 +13,22 @@
         {
           "name": "My layout",
           "values": {
-            "components.wallpaperSelector.displayMode": "slices",
+            "components.wallpaperSelector.displayMode": "wall",
             "components.wallpaperSelector.expandedWidth": 924.0,
             "components.wallpaperSelector.skewOffset": 35.0,
-            "components.wallpaperSelector.visibleCount": 12.0,
-            "general.closeOnSelection": true
+            "components.wallpaperSelector.visibleCount": 12.0
+          }
+        },
+        {
+          "name": "My layout 2",
+          "values": {
+            "components.wallpaperSelector.displayMode": "wall",
+            "components.wallpaperSelector.expandedWidth": 924.0,
+            "components.wallpaperSelector.gridColumns": 5,
+            "components.wallpaperSelector.gridRows": 4,
+            "components.wallpaperSelector.showTypeBadges": false,
+            "components.wallpaperSelector.skewOffset": 35.0,
+            "components.wallpaperSelector.visibleCount": 12.0
           }
         }
       ],
@@ -54,7 +65,6 @@
     }
   },
   "general": {
-    "closeOnSelection": true,
     "filterBarAlwaysVisible": true,
     "maxFps": 120,
     "notifyOnWallpaperChange": false,
@@ -94,7 +104,7 @@
           "components.wallpaperSelector.depthSkew": null,
           "components.wallpaperSelector.depthSpacingPx": null,
           "components.wallpaperSelector.depthWidthPx": null,
-          "components.wallpaperSelector.displayMode": "slices",
+          "components.wallpaperSelector.displayMode": "wall",
           "components.wallpaperSelector.enabled": true,
           "components.wallpaperSelector.expandedWidth": 924.0,
           "components.wallpaperSelector.frameEnabled": null,
@@ -103,7 +113,7 @@
           "components.wallpaperSelector.frameX": null,
           "components.wallpaperSelector.frameY": null,
           "components.wallpaperSelector.gridBorderWidth": null,
-          "components.wallpaperSelector.gridColumns": null,
+          "components.wallpaperSelector.gridColumns": 5,
           "components.wallpaperSelector.gridCornerRadius": null,
           "components.wallpaperSelector.gridCylinderBend": null,
           "components.wallpaperSelector.gridCylinderRadius": null,
@@ -115,7 +125,7 @@
           "components.wallpaperSelector.gridGapY": null,
           "components.wallpaperSelector.gridLayout": null,
           "components.wallpaperSelector.gridRoundCorners": null,
-          "components.wallpaperSelector.gridRows": null,
+          "components.wallpaperSelector.gridRows": 4,
           "components.wallpaperSelector.gridScaleVariance": null,
           "components.wallpaperSelector.gridScatter": null,
           "components.wallpaperSelector.gridSearchPanelOffsetX": null,
@@ -209,7 +219,7 @@
           "components.wallpaperSelector.sandyTwist": null,
           "components.wallpaperSelector.sandyVortex": null,
           "components.wallpaperSelector.sandyWaist": null,
-          "components.wallpaperSelector.showTypeBadges": null,
+          "components.wallpaperSelector.showTypeBadges": false,
           "components.wallpaperSelector.skewOffset": 35.0,
           "components.wallpaperSelector.sliceEdgeTilt": null,
           "components.wallpaperSelector.sliceFilterBarOffsetX": null,
@@ -239,6 +249,7 @@
           "filterBar.positionEnabled": null,
           "filterBar.positionX": null,
           "filterBar.positionY": null,
+          "filterBar.show.arrange": false,
           "filterBar.show.colors": true,
           "filterBar.show.download": null,
           "filterBar.show.favourites": null,
@@ -254,6 +265,7 @@
           "filterBar.show.sort.recent": null,
           "filterBar.show.sort.res": true,
           "filterBar.show.sort.richness": true,
+          "filterBar.show.swatch": false,
           "filterBar.show.tagcloud": null,
           "filterBar.show.tagging": null,
           "filterBar.show.theme": null,
