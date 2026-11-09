@@ -24,6 +24,10 @@
       "showTypeBadges": false
     }
   },
+  "defaultMatugenConfig": "~/.config/matugen/config.toml",
+  "dms": {
+    "hoverPreview": false
+  },
   "drawing": {
     "device": "cpu",
     "enabled": true,
@@ -32,6 +36,7 @@
     "pack": "/usr/share/skwd-deck/models/drawing/pack.json",
     "paperColor": "#000000"
   },
+  "externalMatugenCommand": "matugen -c %config% image %path% -t %scheme% -m %mode% --source-color-index %index% && dms ipc call wallpaper set %path%",
   "features": {
     "matugen": true
   },
@@ -55,6 +60,11 @@
     "notifyOnWallpaperChange": false,
     "randomRotate": false,
     "uiScale": 1.25
+  },
+  "integrations": [],
+  "matugen": {
+    "colorIndex": 0,
+    "contrast": 0
   },
   "niri": {
     "overviewBackdrop": false,
@@ -265,11 +275,11 @@
   },
   "postProcessing": [],
   "theme": {
-    "authority": "",
-    "engine": "",
-    "policy": "",
+    "authority": "skwd",
+    "engine": "matugen",
+    "policy": "wallpaper",
     "targets": [
-      "dms"
+      "noctalia"
     ]
   },
   "transition": {

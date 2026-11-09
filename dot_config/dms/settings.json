@@ -940,10 +940,16 @@
   "dashTabPosition": "auto",
   "dashTabsEvenlySpaced": true,
   "showWeekNumber": false,
-  "matugenSpec": "2021",
+  "matugenSpec": "dms",
   "density": "comfortable",
   "osdWorkspaceEnabled": false,
   "osdCapsLockEnabled": true,
   "batteryChargeLimit": 100,
-  "batteryScaleToChargeLimit": false
+  "batteryScaleToChargeLimit": false,
+  "matugenScheme": "scheme-tonal-spot",
+  "matugenSourceMode": "dominant",
+  "runDmsMatugenTemplates": true,
+  "runUserMatugenTemplates": true,
+  "matugenSmartMode": false,
+  "matugenTemplateVencord": false
 }
