@@ -1,0 +1,31 @@
+layer-rule {
+	match namespace="^duxlabs:.*"
+	background-effect {
+		xray false
+	}
+}
+layer-rule {
+  match namespace="vicinae"
+  geometry-corner-radius 16
+  background-effect {
+    blur true
+    xray false
+  }
+}
+layer-rule {
+    place-within-backdrop true
+}
+layer-rule {
+    match layer="top"
+    match layer="overlay"
+    background-effect {
+        xray false
+    }
+}
+layer-rule {
+    match namespace="skwd-wall"
+    background-effect {
+        blur true
+        xray false
+    }
+}
