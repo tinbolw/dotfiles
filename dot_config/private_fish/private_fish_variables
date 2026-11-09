@@ -1,0 +1,5 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export SSH_AGENT_PID:1332
+SETUVAR --export SSH_AUTH_SOCK:/home/tinbolw/\x2ekeychain/9Y3FScrA\x2es
+SETUVAR fish_user_paths:/home/tinbolw/\x2eopencode/bin\x1e/home/tinbolw/Flutter/flutter/bin\x1e/bin\x1e/home/tinbolw/\x2elocal/bin
