@@ -135,4 +135,5 @@ include "dms/binds.kdl"
 include "dms/cursor.kdl"
 include "dms/outputs.kdl"
 
+include "./colors.kdl"
 include "./glide-edit.kdl"

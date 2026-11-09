@@ -65,6 +65,7 @@
     }
   },
   "general": {
+    "closeOnSelection": true,
     "filterBarAlwaysVisible": true,
     "maxFps": 120,
     "notifyOnWallpaperChange": false,
